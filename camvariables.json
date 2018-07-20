@@ -27,7 +27,7 @@
         "default": "35.196.200.179",
         "type": "string",
         "required": true,
-        "secured": true,
+        "secured": false,
         "label": "endpoint",
         "hidden": false,
         "immutable": false
