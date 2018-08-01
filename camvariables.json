@@ -1,38 +1,6 @@
 {
     "template_input_params": [
       {
-        "name": "username",
-        "description": "Nutanix username",
-        "default": "admin",
-        "type": "string",
-        "required": true,
-        "secured": false,
-        "label": "username",
-        "hidden": false,
-        "immutable": false
-      },
-      {
-        "name": "password",
-        "description": "Nutanix password",
-        "type": "string",
-        "required": true,
-        "secured": true,
-        "label": "password",
-        "hidden": false,
-        "immutable": false
-      },  
-      {
-        "name": "endpoint",
-        "description": "Nutanix endpoint",
-        "default": "35.196.200.179",
-        "type": "string",
-        "required": true,
-        "secured": false,
-        "label": "endpoint",
-        "hidden": false,
-        "immutable": false
-      }, 
-      {
         "name": "cluster",
         "description": "Nutanix Cluster ID",
         "default": "27db5fb2-2aa0-48c4-bd2a-2fccdb8fad36",

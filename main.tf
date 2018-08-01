@@ -25,11 +25,6 @@
 ### Define Provider Info for terraform-provider-nutanix
 ### This is where you define the credentials for Prism Central
 provider "nutanix" {
-  username = "${var.username}"
-  password = "${var.password}"
-  endpoint = "${var.endpoint}"
-  insecure = true
-  port     = 9440
 }
 
 ### Define Script Local Variables
