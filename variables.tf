@@ -1,3 +1,3 @@
 variable "cluster" {
-  description = "Nutanix password"
+  description = "Nutanix cluster ID"
 }
