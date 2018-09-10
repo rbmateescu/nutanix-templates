@@ -180,7 +180,7 @@ resource "nutanix_virtual_machine" "demo-01-web" {
   num_vcpus_per_socket = 2
   num_sockets          = 1
   memory_size_mib      = 4096
-  power_state          = "OFF"
+  power_state          = "ON"
 
   # What cluster will this VLAN live on?
   cluster_reference = {
