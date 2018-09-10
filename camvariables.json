@@ -10,6 +10,16 @@
         "label": "cluster",
         "hidden": false,
         "immutable": false
+      },
+      {
+        "name": "name",
+        "description": "Nutanix VM name",
+        "type": "string",
+        "required": true,
+        "secured": false,
+        "label": "VM name",
+        "hidden": false,
+        "immutable": false
       }
     ],
     "template_output_params": [

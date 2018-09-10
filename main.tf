@@ -37,6 +37,7 @@ provider "nutanix" {
 ###       not need to manually provision cluster ID
 locals {
   cluster1   = "${var.cluster}"
+  name   = "${var.name}"
 }
 
 ##########################
@@ -175,7 +176,7 @@ resource "nutanix_subnet" "infra-managed-network-140" {
 
 resource "nutanix_virtual_machine" "demo-01-web" {
   # General Information
-  name                 = "demo-01-web"
+  name                 = "${local.name}"
   description          = "demo Frontend Web Server"
   num_vcpus_per_socket = 2
   num_sockets          = 1
