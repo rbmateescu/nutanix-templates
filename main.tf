@@ -204,7 +204,6 @@ resource "nutanix_virtual_machine" "demo-01-web" {
   }]
 
 
-  # What disk/cdrom configuration will this have?
   disk_list = [{
     # data_source_reference in the Nutanix API refers to where the source for
     # the disk device will come from. Could be a clone of a different VM or a
@@ -213,12 +212,9 @@ resource "nutanix_virtual_machine" "demo-01-web" {
       kind = "image"
       uuid = "${nutanix_image.cirros-034-disk.id}"
     }
-
-    # defining an additional entry in the disk_list array will create another
-    # disk in addition to the image we're showing off above.
-    device_properties = {
-      device_type = "DISK"
-    }
+  },
+  {
     disk_size_mib = 5000
   }]
+
 }
