@@ -38,6 +38,8 @@ provider "nutanix" {
 locals {
   cluster1   = "${var.cluster}"
   name   = "${var.name}"
+  subnet_name = "${var.subnet_name}"
+  vlan_id = "${var.vlan_id}"
 }
 
 ##########################
@@ -146,8 +148,8 @@ resource "nutanix_subnet" "infra-managed-network-140" {
   }
 
   # General Information
-  name        = "infra-managed-network-140"
-  vlan_id     = 140
+  name        = "${local.subnet_name}"
+  vlan_id     = "${local.vlan_id}"
   subnet_type = "VLAN"
 
 #   # Provision a Managed L3 Network

@@ -20,6 +20,26 @@
         "label": "VM name",
         "hidden": false,
         "immutable": false
+      },
+      {
+        "name": "subnet_name",
+        "description": "Nutanix subnet name",
+        "type": "string",
+        "required": true,
+        "secured": false,
+        "label": "Subnet name",
+        "hidden": false,
+        "immutable": false
+      },
+      {
+        "name": "vlan_id",
+        "description": "Nutanix VLAN ID",
+        "type": "string",
+        "required": true,
+        "secured": false,
+        "label": "VLAN ID",
+        "hidden": false,
+        "immutable": false
       }
     ],
     "template_output_params": [
