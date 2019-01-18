@@ -23,7 +23,7 @@
       },
       {
         "name": "subnet_name",
-        "description": "Nutanix subnet name",
+        "description": "Nutanix subnet name to be created",
         "type": "string",
         "required": true,
         "secured": false,
@@ -33,7 +33,7 @@
       },
       {
         "name": "vlan_id",
-        "description": "Nutanix VLAN ID",
+        "description": "Nutanix VLAN ID into which the subnet gets created",
         "type": "string",
         "required": true,
         "secured": false,
