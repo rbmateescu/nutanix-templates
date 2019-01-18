@@ -38,6 +38,8 @@ provider "nutanix" {
 locals {
   cluster1   = "${var.cluster}"
   name   = "${var.name}"
+  subnet_name = "${var.subnet_name}"
+  vlan_id = "${var.vlan_id}"
 }
 
 ##########################
@@ -146,8 +148,8 @@ resource "nutanix_subnet" "infra-managed-network-140" {
   }
 
   # General Information
-  name        = "infra-managed-network-140"
-  vlan_id     = 140
+  name        = "${local.subnet_name}"
+  vlan_id     = "${local.vlan_id}"
   subnet_type = "VLAN"
 
 #   # Provision a Managed L3 Network
@@ -203,21 +205,18 @@ resource "nutanix_virtual_machine" "demo-01-web" {
   #   }
   }]
 
-  # What disk/cdrom configuration will this have?
+
   disk_list = [{
     # data_source_reference in the Nutanix API refers to where the source for
     # the disk device will come from. Could be a clone of a different VM or a
     # image like we're doing here
-    data_source_reference = [{
+    data_source_reference = {
       kind = "image"
       uuid = "${nutanix_image.cirros-034-disk.id}"
-    }]
-
-    # defining an additional entry in the disk_list array will create another
-    # disk in addition to the image we're showing off above.
-    device_properties = [{
-      device_type = "DISK"
-    }]
+    }
+  },
+  {
     disk_size_mib = 5000
   }]
+
 }
